@@ -26,8 +26,7 @@ module.exports = {
         test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader',
         options: {
-          name: '[path][name].[ext]',
-          publicPath: '/',
+          name: 'assets/images/[name].[ext]',
         },
       },
 

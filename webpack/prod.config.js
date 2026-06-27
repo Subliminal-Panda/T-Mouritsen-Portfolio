@@ -26,7 +26,7 @@ module.exports = webpackMerge(webpackCommon, {
 
     chunkFilename: "[id]-[chunkhash].js",
 
-    publicPath: "/"
+    publicPath: "/T-Mouritsen-Portfolio/"
   },
 
   module: {
@@ -55,13 +55,27 @@ module.exports = webpackMerge(webpackCommon, {
             {
               loader: "sass-loader",
               options: {
-                outputStyle: "expanded",
                 sourceMap: true,
-                sourceMapContents: true
+                sassOptions: {
+                  outputStyle: "compressed",
+                  sourceMapContents: true
+                }
               }
             }
           ]
         })
+      },
+      {
+        test: /\.(png|jpg|gif|ico)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "assets/images/[folder]/[name].[ext]",
+              publicPath: "/T-Mouritsen-Portfolio/"
+            }
+          }
+        ]
       }
     ]
   },

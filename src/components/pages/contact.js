@@ -2,7 +2,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import contactImage from "../../../static/assets/images/bio/contactImage.jpg";
-import { Link } from "react-router-dom";
 
 //TODO: make phone # pull up phone dialer on device, populating phone #
 //TODO: make email a "mailto" link
@@ -13,12 +12,13 @@ export default function Contact () {
     return (
         <div className="content-page-wrapper two-column">
             <div
-            className="content-left-column"
-            style={{
-                background: "url(" + contactImage + ") no-repeat",
-                backgroundSize: "cover",
-                backgroundPosition: "center center",
-            }}>
+                className="content-left-column"
+                style={{
+                    backgroundImage: "url(" + contactImage + ")",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center center",
+                    backgroundRepeat: "no-repeat"
+                }}>
             </div>
             <div className="content-right-column">
                 <div className="contact-wrap" >
@@ -40,30 +40,30 @@ export default function Contact () {
                             <FontAwesomeIcon icon="map-marked-alt" />
                         </div>
                         <div>
-                            <h2>10251 S. CountryWood Dr.</h2>
+                            <h2>10251 S. Countrywood Dr.</h2>
                             <h2>Sandy, UT 84092</h2>
                         </div>
                     </div>
-                    <Link className="external-link" to={{ pathname: "https://github.com/Subliminal-Panda" }} target="_blank" >
-                        <div href="https://github.com/Subliminal-Panda" className="contact-line">
+                    <a className="external-link" href="https://github.com/Subliminal-Panda" target="_blank" rel="noreferrer" >
+                        <div className="contact-line">
                             <div className="icon" >
-                                <FontAwesomeIcon href="https://github.com/Subliminal-Panda" icon={faGithub} />
+                                <FontAwesomeIcon icon={faGithub} />
                             </div>
                             <h2>
                                 https://github.com/Subliminal-Panda
                             </h2>
                         </div>
-                    </Link>
-                    <Link className="external-link" to={{ pathname: "https://www.linkedin.com/in/tmouritsen57/" }} target="_blank" >
+                    </a>
+                    <a className="external-link" href="https://www.linkedin.com/in/tmouritsen57/" target="_blank" rel="noreferrer">
                         <div className="contact-line">
                             <div className="icon" >
-                                <FontAwesomeIcon href="https://www.linkedin.com/in/tmouritsen57/" icon={faLinkedinIn} />
+                                <FontAwesomeIcon icon={faLinkedinIn} />
                             </div>
-                            <h2 href="https://www.linkedin.com/in/tmouritsen57/">
+                            <h2>
                             https://www.linkedin.com/in/tmouritsen57/
                             </h2>
                         </div>
-                    </Link>
+                    </a>
                 </div>
             </div>
         </div>

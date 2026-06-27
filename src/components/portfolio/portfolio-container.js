@@ -77,6 +77,9 @@ export default class PortfolioContainer extends Component
         return (
             <div className="homepage-wrapper">
                 <div className="filter-buttons">
+                    <button className="btn" onClick={ () => this.handleResetFilter() }>
+                        All Categories
+                    </button>
                     <button className="btn" onClick={ () => this.handleFilter( "Design" ) }>
                         Art & Design
                     </button>
@@ -85,9 +88,6 @@ export default class PortfolioContainer extends Component
                     </button>
                     <button className="btn" onClick={ () => this.handleFilter( "Miscellaneous" ) }>
                         Miscellaneous
-                    </button>
-                    <button className="btn" onClick={ () => this.handleResetFilter() }>
-                        All Categories
                     </button>
                 </div>
                 <div className="portfolio-items-wrapper">

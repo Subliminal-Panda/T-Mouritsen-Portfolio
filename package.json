@@ -5,10 +5,12 @@
   "scripts": {
     "preinstall": "npm set audit false",
     "start": "webpack-dev-server --config webpack/dev.config.js --watch",
-    "build": "cross-env NODE_ENV=production webpack --config webpack/prod.config.js --progress --display-error-details --color",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production webpack --config webpack/prod.config.js --progress --display-error-details --color",
     "heroku-postbuild": "npm run build",
     "precommit": "eslint src",
-    "prod": "NODE_ENV=production node server.js"
+    "prod": "NODE_ENV=production node server.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -30,7 +32,7 @@
   "bugs": {
     "url": "https://github.com/bottega-code-school/js-builder/issues"
   },
-  "homepage": "https://github.com/bottega-code-school/js-builder",
+  "homepage": "https://subliminal-panda.github.io/T-Mouritsen-Portfolio",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
@@ -63,7 +65,6 @@
     "html-to-draftjs": "^1.5.0",
     "html-webpack-plugin": "^3.2.0",
     "moment": "^2.29.1",
-    "node-sass": "^4.13.1",
     "postcss-loader": "^2.1.6",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -76,7 +77,8 @@
     "react-router-dom": "5.1.2",
     "react-truncate": "^2.4.0",
     "redux": "4.0.5",
-    "sass-loader": "^7.1.0",
+    "sass": "^1.69.5",
+    "sass-loader": "^10.4.1",
     "striptags": "^3.2.0",
     "style-loader": "^0.21.0",
     "webpack": "4.42.1",
@@ -92,6 +94,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "gh-pages": "^6.3.0",
     "uglifyjs-webpack-plugin": "^1.2.7"
   }
 }

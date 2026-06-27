@@ -6,11 +6,12 @@ export default function About () {
         <div className="content-page-wrapper two-column">
             <div
             className="content-left-column"
-            style={{
-                background: "url(" + aboutImage + ") no-repeat",
-                backgroundSize: "cover",
-                backgroundPosition: "center center",
-            }}>
+                style={{
+                    backgroundImage: "url(" + aboutImage + ")",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center center",
+                    backgroundRepeat: "no-repeat"
+                }}>
             </div>
             <div className="content-right-column">
 <h1>About Me</h1>
