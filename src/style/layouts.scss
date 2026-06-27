@@ -1,10 +1,12 @@
 ﻿.content-page-wrapper {
     width: 100vw;
     height: calc(100vh - 85px);
-    overflow: none;
+    overflow: hidden;
 }
+
 .content-left-column {
     height: calc(100vh - 85px);
+    min-height: 400px;
     overflow: hidden;
 }
 

@@ -1,14 +1,17 @@
 ﻿.one-column {
     @include base-grid();
     grid-template-columns: 1fr;
+    grid-template-rows: calc(100vh - 85px);
 }
 
 .two-column {
     @include base-grid();
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: calc(100vh - 85px);
 }
 
 .three-column {
     @include base-grid();
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: calc(100vh - 85px);
 }
